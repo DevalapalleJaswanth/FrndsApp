@@ -64,7 +64,10 @@ export default function Card(props: any) {
         props.user === null ? (
           ""
         ) : (
-          <Link to={`Details/${props.user.id}`}>
+          <Link
+            to={`Details/${props.user.id}`}
+            style={{ textDecoration: "none", color: "Black" }}
+          >
             {props.user.firstname + " " + props.user.lastname}
           </Link>
         )}

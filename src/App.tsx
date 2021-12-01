@@ -59,10 +59,8 @@ export default function App() {
     let list: any = users;
     let l: any = list.length;
 
-    // console.log(data);
     list.push({ ...data, id: l, friends: frnds });
 
-    // console.log(list);
     setUsers([...list]);
     console.log(users);
   }
@@ -80,8 +78,6 @@ export default function App() {
   return (
     <div>
       <AppStore.Provider value={{ users, AddPerson, AddToFrnd }}>
-        <Addperson />
-        <Card />
         <Home />
       </AppStore.Provider>
     </div>
