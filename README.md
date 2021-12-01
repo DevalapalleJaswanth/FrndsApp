@@ -1,0 +1,2 @@
+# FrndsApp
+Created with CodeSandbox
