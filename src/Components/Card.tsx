@@ -4,7 +4,9 @@ import { BsPersonSquare } from "react-icons/bs";
 
 export default function Card(props: any) {
   const [border, setBorder] = useState("0px solid black");
-
+  const [data1, setData1] = useState<any>();
+  const [data2, setData2] = useState<any>();
+  const [count, setCount] = useState<any>(0);
   const cardstyle = {
     position: "relative",
     backgroundColor: "rgb(240, 240, 240)",
@@ -86,7 +88,13 @@ export default function Card(props: any) {
             fontFamily: "Lucida Console, Courier New, monospace"
           }}
         >
-          Optional
+          <button
+            onClick={() => {
+              props.callback(props.user.id);
+            }}
+          >
+            {props.text}
+          </button>
         </div>
       </div>
     </div>

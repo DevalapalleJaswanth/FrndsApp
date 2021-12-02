@@ -4,7 +4,11 @@ export default function Display(props: any) {
   return (
     <div>
       {props.users
-        ? props.users.map((item: any, i: any) => <Card user={item} />)
+        ? props.users.map((item: any, i: any) => (
+            <div style={{ display: "flex" }}>
+              <Card user={item} text={props.text} callback={props.callback} />
+            </div>
+          ))
         : ""}
     </div>
   );
