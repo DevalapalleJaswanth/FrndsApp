@@ -4,9 +4,12 @@ import AppStore from "../Store/AppStore";
 import Display from "./Display";
 import Details from "./Details";
 import Addperson from "../Components/Addperson";
+import { Chooser } from "../Services/Chooser";
+import { Selector } from "../Services/Selector";
 export default function Home() {
   const { users, AddPerson, AddToFrnd } = useContext(AppStore);
-
+  const [data, setData] = useState<any>();
+  console.log("output", Selector(-1, users[5], users[4], users));
   return (
     <Router>
       <Link

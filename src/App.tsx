@@ -4,6 +4,7 @@ import Addperson from "./Components/Addperson";
 import AppStore from "./Store/AppStore";
 import Card from "./Components/Card";
 import Home from "./Containers/Home";
+
 export default function App() {
   const [users, setUsers] = useState<any>([
     {
@@ -12,7 +13,7 @@ export default function App() {
       lastname: "pears",
       occupation: "Professor",
       location: "South Africa",
-      friends: [1, 2]
+      friends: [1, 2, 4]
     },
     {
       id: 1,
@@ -44,7 +45,7 @@ export default function App() {
       lastname: "Singh",
       occupation: "Writer",
       location: "India",
-      friends: [5, 3]
+      friends: [5, 3, 0]
     },
     {
       id: 5,
