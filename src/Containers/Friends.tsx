@@ -29,7 +29,7 @@ export default function Friends(props: any) {
     <div>
       {console.log(frnds)}
       <div>
-        <Display users={frnds} />
+        <Display users={frnds} text={props.text} />
       </div>
     </div>
   );
