@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { BsPersonSquare } from "react-icons/bs";
-
+import { useNavigate } from "react-router-dom";
 export default function Card(props: any) {
   const [border, setBorder] = useState("0px solid black");
   const [data1, setData1] = useState<any>();
   const [data2, setData2] = useState<any>();
   const [count, setCount] = useState<any>(0);
+  let navigate = useNavigate();
   const cardstyle = {
     position: "relative",
     backgroundColor: "rgb(240, 240, 240)",
@@ -67,8 +68,11 @@ export default function Card(props: any) {
           ""
         ) : (
           <Link
-            to={`Details/${props.user.id}`}
+            to={`/Details/${props.user.id}`}
             style={{ textDecoration: "none", color: "Black" }}
+            /*onClick={() => {
+              navigate(`/Details/${props.user.id}`);
+            }}*/
           >
             {props.user.firstname + " " + props.user.lastname}
           </Link>
