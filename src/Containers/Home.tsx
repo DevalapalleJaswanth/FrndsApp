@@ -74,7 +74,8 @@ export default function Home() {
                   ) : (
                     <Display
                       users={users}
-                      text="Select"
+                      text1="Select"
+                      text2="UnSelect"
                       callback={DegOfSepfunc}
                     />
                   )}

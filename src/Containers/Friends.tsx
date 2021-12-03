@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Display from "./Display";
 export default function Friends(props: any) {
   // let params = useParams<any>();
+  console.log(props);
   let user: any =
     props.users && props.frnds
       ? props.users.map((item: any, i: any) => {
@@ -29,7 +30,12 @@ export default function Friends(props: any) {
     <div>
       {console.log(frnds)}
       <div>
-        <Display users={frnds} text={props.text} />
+        <Display
+          users={frnds}
+          text1={props.text1}
+          text2={props.text2}
+          callback={props.callback}
+        />
       </div>
     </div>
   );

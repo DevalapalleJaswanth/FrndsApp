@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import AppStore from "../Store/AppStore";
+import { useNavigate } from "react-router-dom";
 export default function Addperson() {
   const [firstname, setFirstname] = useState<any>("");
   const [lastname, setLastname] = useState<any>("");
@@ -8,6 +9,7 @@ export default function Addperson() {
   const [err, setErr] = useState("");
   const { users, AddPerson, AddToFrnd } = useContext(AppStore);
   const [frnds, setFrnds] = useState<any>([]);
+  let navigate = useNavigate();
   const submit = (e: any) => {
     e.preventDefault();
     if (
@@ -28,6 +30,7 @@ export default function Addperson() {
       console.log(firstname, lastname, occupation, location, data);
       AddPerson(data, frnds);
       console.log(users);
+      navigate(`/Details/${users.length - 1}`);
     }
   };
   return (

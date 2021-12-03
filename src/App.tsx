@@ -76,9 +76,26 @@ export default function App() {
     });
     setUsers(updateddata);
   }
+  function updateFrnds(id: any, data1: any, data2: any) {
+    console.log(data1, data2);
+    //data1.friends.push(data2.id);
+    //data2.friends.push(data1.id);
+    let list: any = users.map((item: any, i: any) => {
+      if (item.id === data1.id) {
+        // list = [...item.friends, data];
+        return { ...data1 };
+      }
+      if (item.id === data2.id) {
+        return { ...data2 };
+      }
+      return item;
+    });
+    //console.log(list);
+    setUsers(list);
+  }
   return (
     <div>
-      <AppStore.Provider value={{ users, AddPerson, AddToFrnd }}>
+      <AppStore.Provider value={{ users, AddPerson, AddToFrnd, updateFrnds }}>
         <Home />
       </AppStore.Provider>
     </div>

@@ -4,9 +4,9 @@ import { BsPersonSquare } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 export default function Card(props: any) {
   const [border, setBorder] = useState("0px solid black");
-  const [data1, setData1] = useState<any>();
-  const [data2, setData2] = useState<any>();
-  const [count, setCount] = useState<any>(0);
+  const [data1, setData1] = useState<any>(props.text1);
+  //const [data2, setData2] = useState<any>();
+  //const [count, setCount] = useState<any>(0);
   let navigate = useNavigate();
   const cardstyle = {
     position: "relative",
@@ -94,10 +94,11 @@ export default function Card(props: any) {
         >
           <button
             onClick={() => {
+              //setData1(props.text2);
               props.callback(props.user.id);
             }}
           >
-            {props.text}
+            {data1}
           </button>
         </div>
       </div>
