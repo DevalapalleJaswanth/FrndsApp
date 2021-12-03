@@ -31,34 +31,37 @@ export default function Home() {
     <div style={{ display: "flex" }}>
       <div>
         <Router>
-          <Link
-            to="/"
-            style={{
-              fontSize: "18px",
-              fontFamily: "Lucida Console, Courier New, monospace",
-              textDecoration: "none",
-              color: "Black"
-            }}
-            onClick={() => {
-              setData(null);
-            }}
-          >
-            Home
-          </Link>
-          <span> </span>
-          <Link
-            to="/Addperson"
-            style={{
-              fontSize: "18px",
-              fontFamily: "Lucida Console, Courier New, monospace",
-              textDecoration: "none",
-              color: "Black"
-            }}
-          >
-            ADD+
-          </Link>
+          <div style={{ alignItems: "center" }}>
+            <Link
+              to="/"
+              style={{
+                fontSize: "18px",
+                fontFamily: "Lucida Console, Courier New, monospace",
+                textDecoration: "none",
+                color: "Black"
+              }}
+              onClick={() => {
+                setData(null);
+              }}
+            >
+              Home
+            </Link>
+            <span> </span>
+            <Link
+              to="/Addperson"
+              style={{
+                fontSize: "18px",
+                fontFamily: "Lucida Console, Courier New, monospace",
+                textDecoration: "none",
+                color: "Black",
+                padding: "10px"
+              }}
+            >
+              ADD+
+            </Link>
+          </div>
           <br></br>
-          <br></br>
+
           <Routes>
             <Route
               path="/"

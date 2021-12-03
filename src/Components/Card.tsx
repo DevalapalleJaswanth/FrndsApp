@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { BsPersonSquare } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
+import { Button } from "@mui/material";
 export default function Card(props: any) {
   const [border, setBorder] = useState("0px solid black");
   const [data1, setData1] = useState<any>(props.text1);
@@ -36,12 +37,14 @@ export default function Card(props: any) {
         position: "relative",
         backgroundColor: "rgb(240, 240, 240)",
         width: "300px",
+        height: "50px",
         border: border,
         padding: "10px",
         margin: "10px",
         outlineStyle: "outset",
         outlineColor: "grey",
-        display: "flex"
+        display: "flex",
+        alignItems: "center"
       }}
       onMouseOver={(e) => {
         hoverin(e);
@@ -73,7 +76,8 @@ export default function Card(props: any) {
       <div
         style={{
           fontSize: "20px",
-          fontFamily: "Lucida Console, Courier New, monospace"
+          fontFamily: "Lucida Console, Courier New, monospace",
+          padding: "5px"
         }}
       >
         {props.user === {} ||
@@ -84,9 +88,6 @@ export default function Card(props: any) {
           <Link
             to={`/Details/${props.user.id}`}
             style={{ textDecoration: "none", color: "Black" }}
-            /*onClick={() => {
-              navigate(`/Details/${props.user.id}`);
-            }}*/
           >
             {props.user.firstname + " " + props.user.lastname}
           </Link>
@@ -106,15 +107,17 @@ export default function Card(props: any) {
             fontFamily: "Lucida Console, Courier New, monospace"
           }}
         >
-          <button
-            style={buttonstyle}
+          <Button
+            size="small"
+            variant="outlined"
+            style={{ fontSize: "10px" }}
             onClick={() => {
               setData1(props.text2);
               props.callback(props.user.id);
             }}
           >
-            {data1}
-          </button>
+            <div>{data1}</div>
+          </Button>
         </div>
       </div>
     </div>

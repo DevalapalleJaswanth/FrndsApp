@@ -29,14 +29,18 @@ export default function Friends(props: any) {
   return (
     <div>
       {console.log(frnds)}
-      <div>
-        <Display
-          users={frnds}
-          text1={props.text1}
-          text2={props.text2}
-          callback={props.callback}
-        />
-      </div>
+      {props.frnds == [] ? (
+        <div> "Yet to make friends"</div>
+      ) : (
+        <div>
+          <Display
+            users={frnds}
+            text1={props.text1}
+            text2={props.text2}
+            callback={props.callback}
+          />
+        </div>
+      )}
     </div>
   );
 }
