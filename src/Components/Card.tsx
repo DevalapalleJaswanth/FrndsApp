@@ -32,7 +32,17 @@ export default function Card(props: any) {
   };
   return (
     <div
-      style={cardstyle}
+      style={{
+        position: "relative",
+        backgroundColor: "rgb(240, 240, 240)",
+        width: "300px",
+        border: border,
+        padding: "10px",
+        margin: "10px",
+        outlineStyle: "outset",
+        outlineColor: "grey",
+        display: "flex"
+      }}
       onMouseOver={(e) => {
         hoverin(e);
       }}
