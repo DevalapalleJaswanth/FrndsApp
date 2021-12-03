@@ -61,7 +61,6 @@ export default function Home() {
           <br></br>
           <Routes>
             <Route
-              exact
               path="/"
               element={
                 <div>
@@ -84,13 +83,11 @@ export default function Home() {
               }
             ></Route>
             <Route
-              exact
               path="/Details/:id"
               element={<Details users={users} />}
             ></Route>
-            <Route exact path="/Addperson" element={<Addperson />}></Route>
+            <Route path="/Addperson" element={<Addperson />}></Route>
             <Route
-              exact
               path="/Degree"
               element={
                 <Degree
