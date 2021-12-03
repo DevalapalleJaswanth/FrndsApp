@@ -7,6 +7,7 @@ export default function Card(props: any) {
   const [data1, setData1] = useState<any>(props.text1);
   //const [data2, setData2] = useState<any>();
   //const [count, setCount] = useState<any>(0);
+  const [color, setColor] = useState("rgb(0, 133, 255)");
   let navigate = useNavigate();
   const cardstyle = {
     position: "relative",
@@ -18,6 +19,9 @@ export default function Card(props: any) {
     outlineStyle: "outset",
     outlineColor: "grey",
     display: "flex"
+  };
+  const buttonstyle = {
+    backgroundColor: color
   };
 
   const hoverin = (e: any) => {
@@ -93,8 +97,9 @@ export default function Card(props: any) {
           }}
         >
           <button
+            style={buttonstyle}
             onClick={() => {
-              //setData1(props.text2);
+              setData1(props.text2);
               props.callback(props.user.id);
             }}
           >

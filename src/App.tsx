@@ -1,4 +1,3 @@
-import "./styles.css";
 import React, { useState } from "react";
 import Addperson from "./Components/Addperson";
 import AppStore from "./Store/AppStore";

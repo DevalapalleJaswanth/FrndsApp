@@ -10,8 +10,7 @@ export default function Details(props: any) {
   let params = useParams<any>();
   let navigate = useNavigate();
   const [swich, setSwich] = useState<any>(0);
-  // const [friendData, setFriendData] = useState<any>();
-  //const [addfrndsData, setAddfrndsData] = useState<any>();
+
   let user: any =
     props.users && params.id
       ? props.users.map((item: any, i: any) => {
@@ -100,13 +99,14 @@ export default function Details(props: any) {
     updateFrnds(data[0].id, data[0], data1[0]);
     navigate(`/Details/${data[0].id}`);
   };
-  // use
-  //setFriendData(data[0])
+
   return (
     <div>
       <div>
         <DetailsCard user={data} />
       </div>
+      <br></br>
+      <br></br>
       <div>
         <button
           onClick={() => {
@@ -129,11 +129,11 @@ export default function Details(props: any) {
             users={props.users ? props.users : {}}
             frnds={data[0] ? data[0].friends : []}
             text1="UnFriend"
-            text2="Friend"
+            text2="UnFriend"
             callback={decFrnd}
           />
         ) : (
-          <Display users={arr} text1="Add+" text2="Added" callback={getFrnd} />
+          <Display users={arr} text1="Add+" text2="Add+" callback={getFrnd} />
         )}
       </div>
     </div>

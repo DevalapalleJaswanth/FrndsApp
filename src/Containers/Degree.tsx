@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles.css";
 import { BsPersonSquare } from "react-icons/bs";
 export default function Degree(props: any) {
   return (
@@ -40,6 +41,8 @@ export default function Degree(props: any) {
           </div>
         </div>
       </div>
+      <br></br>
+      <br></br>
       <div>
         {props.list
           ? props.list.map((item: any, i: any) => (
@@ -48,7 +51,7 @@ export default function Degree(props: any) {
                   i === item.length - 1 ? (
                     <div
                       style={{
-                        fontSize: "15px",
+                        fontSize: "10px",
                         fontFamily: "Lucida Console, Courier New, monospace"
                       }}
                     >
@@ -60,7 +63,7 @@ export default function Degree(props: any) {
                   ) : (
                     <div
                       style={{
-                        fontSize: "15px",
+                        fontSize: "10px",
                         fontFamily: "Lucida Console, Courier New, monospace"
                       }}
                     >
@@ -72,6 +75,7 @@ export default function Degree(props: any) {
                     </div>
                   )
                 )}
+                <br></br>
                 <br></br>
               </div>
             ))
